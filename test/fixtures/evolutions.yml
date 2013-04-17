@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  opportunity_id: 1
+  name: MyString
+  user_id: 1
+  complete: false
+
+two:
+  opportunity_id: 1
+  name: MyString
+  user_id: 1
+  complete: false

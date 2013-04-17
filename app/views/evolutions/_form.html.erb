@@ -1,0 +1,33 @@
+<%= form_for(@evolution) do |f| %>
+  <% if @evolution.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@evolution.errors.count, "error") %> prohibited this evolution from being saved:</h2>
+
+      <ul>
+      <% @evolution.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :opportunity_id %><br />
+    <%= f.number_field :opportunity_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br />
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :complete %><br />
+    <%= f.check_box :complete %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

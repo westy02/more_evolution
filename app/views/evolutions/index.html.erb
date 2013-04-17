@@ -1,0 +1,29 @@
+<h1>Listing evolutions</h1>
+
+<table>
+  <tr>
+    <th>Opportunity</th>
+    <th>Name</th>
+    <th>User</th>
+    <th>Complete</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @evolutions.each do |evolution| %>
+  <tr>
+    <td><%= evolution.opportunity_id %></td>
+    <td><%= evolution.name %></td>
+    <td><%= evolution.user_id %></td>
+    <td><%= evolution.complete %></td>
+    <td><%= link_to 'Show', evolution %></td>
+    <td><%= link_to 'Edit', edit_evolution_path(evolution) %></td>
+    <td><%= link_to 'Destroy', evolution, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Evolution', new_evolution_path %>

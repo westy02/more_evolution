@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  task: MyString
+  suggestion: MyText
+  user_id: 1
+  company_id: 1
+
+two:
+  task: MyString
+  suggestion: MyText
+  user_id: 1
+  company_id: 1

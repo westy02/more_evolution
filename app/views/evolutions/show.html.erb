@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Opportunity:</b>
+  <%= @evolution.opportunity_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @evolution.name %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @evolution.user_id %>
+</p>
+
+<p>
+  <b>Complete:</b>
+  <%= @evolution.complete %>
+</p>
+
+
+<%= link_to 'Edit', edit_evolution_path(@evolution) %> |
+<%= link_to 'Back', evolutions_path %>
