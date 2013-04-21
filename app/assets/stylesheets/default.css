@@ -6,6 +6,7 @@ body {
 	margin: 0px;
 	padding: 0px;
 	background: #22222D url(images/img01.png) repeat;
+	background-color: rgb(240, 237, 237);
 	font-family: 'Open Sans', sans-serif;
 	font-size: 13px;
 	color: #545454;
@@ -69,7 +70,7 @@ hr {
 #wrapper {
 	overflow: hidden;
 	width: 1200px;
-	margin: 50px auto;
+	margin: 25px auto;
 	background: #FFFFFF;
 	box-shadow: 0px 0px 10px 5px rgba(0,0,0,.2);
 }
@@ -87,8 +88,20 @@ hr {
 
 #header {
 	overflow: hidden;
-	height: 150px;
+	height: 130px;
 	background: #154964 url(images/img01.png) repeat;
+}
+
+#subhead1 {
+	height: 8px;
+	background: #FFF3BD;
+}
+
+#subhead2 {
+	overflow: hidden;
+	height: 30px;
+	background: #E57800;
+	
 }
 
 /* Logo */
@@ -97,7 +110,7 @@ hr {
 {
 	float: left;
 	width: 350px;
-	padding: 30px 0px 0px 50px;
+	padding: 40px 0px 0px 50px;
 }
 
 #logo h1
