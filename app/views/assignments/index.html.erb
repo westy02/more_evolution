@@ -1,0 +1,29 @@
+<h1>Listing assignments</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>User type</th>
+    <th>Opportunity</th>
+    <th>Evolution</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @assignments.each do |assignment| %>
+  <tr>
+    <td><%= assignment.user_id %></td>
+    <td><%= assignment.user_type_id %></td>
+    <td><%= assignment.opportunity_id %></td>
+    <td><%= assignment.evolution_id %></td>
+    <td><%= link_to 'Show', assignment %></td>
+    <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
+    <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Assignment', new_assignment_path %>

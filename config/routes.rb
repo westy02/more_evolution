@@ -1,5 +1,11 @@
 MoreEvolution::Application.routes.draw do
 
+  get "pages/evolutions_home"
+  get "pages/guide"
+  
+  match '/',  :to => 'pages#evolutions_home'
+
+  resources :assignments
   resources :microposts
   resources :evolutions
   resources :opportunities
@@ -7,6 +13,8 @@ MoreEvolution::Application.routes.draw do
 
 
   devise_for :users
+  
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
