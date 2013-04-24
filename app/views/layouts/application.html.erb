@@ -14,16 +14,25 @@
 			<br />
 			<p>Building business systems</p>
 		</div>
-		<div id="menu">
+		<div id="menu" class="menu">
 			<ul>
 				<li><%= link_to 'Home', root_path %></li>
-				<li><%= link_to 'Company', companies_path %></li>
+				<li><a href="/">Settings</a>
+					<ul>
+						<li>
+							<span><%= link_to 'User Profile', edit_user_registration_path%>
+							<span><%= link_to 'Company Profile', companies_path, {:class => "last"} %>
+								</span></span>
+						</li>	
+					</ul>
+					</li>
 				<li><%= link_to 'Guide', root_path %></li>
 				<% if user_signed_in? %>
    <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
 
 <% end %>
-			</ul>
+			</ul>		
+
 		</div>
 	</div>
 	<div id="subhead1"></div>
