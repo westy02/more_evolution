@@ -11,13 +11,12 @@
 	<div id="header">
 		<div id="logo">
 			<h1><a href="/">MORE Evolution</a></h1>
-			<br />
-			<p>Building business systems</p>
+			<p>The constant evolution of your business systems</p>
 		</div>
 		<div id="menu" class="menu">
 			<ul>
 				<li><%= link_to 'Home', root_path %></li>
-				<li><a href="/">Settings</a>
+				<li><a>Settings</a>
 					<ul>
 						<li>
 							<span><%= link_to 'User Profile', edit_user_registration_path%>
@@ -44,7 +43,13 @@
 			
 			<%= yield %>
 		</div>
-		<%= yield :sidebar %>
+		
+<div id="sidebar">
+			<div id="tbox1">
+				<%= yield :sidebar %>
+				
+			</div>
+		</div>
 	</div>
 	<div id="three-column">
 		<div id="tbox1">

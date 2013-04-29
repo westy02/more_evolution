@@ -1,0 +1,39 @@
+<h2>My Companies</h2>
+
+<table class="style1">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @companies.each do |company| %>
+  <tr>
+    <td><%= company.name %></td>
+    <td><%= company.email %></td>
+    <td><%= link_to 'Show', company %></td>
+    <td><%= link_to 'Edit', edit_company_path(company) %></td>
+    <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<a href="/companies/new" class="button-style2">New Company</a>
+
+<% content_for :sidebar do%>
+				<h2>New Opportunities</h2>
+				<ul class="style2">
+				
+					<li class="first">
+						<h3><a href="#">Maecenas luctus lectus</a></h3>
+						<p><a href="#">Quisque dictum integer nisl risus, sagittis convallis, rutrum id, congue, and nibh.</a></p>
+					</li>
+				
+					
+				</ul>
+		<%end%>
+

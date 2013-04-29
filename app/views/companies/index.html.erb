@@ -1,25 +1,28 @@
-<h1>Listing companies</h1>
+<h2> My Companies</h2>
+ <% @companies.each do |company| %>
+<ul class="chunky">
+	<li>
+		<h2><%=company.name%></h2>
+		<p><%=company.email%></p>
+		
+		<%= link_to "Edit", edit_company_path(company), :class => "button-style2"%>
+		<%= link_to 'Delete Company', company, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button-style2" %>
+	</li>
+</ul>	
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Email</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+ <%end%>
+<a href="/companies/new" class="button-style2">New Company</a>
 
-<% @companies.each do |company| %>
-  <tr>
-    <td><%= company.name %></td>
-    <td><%= company.email %></td>
-    <td><%= link_to 'Show', company %></td>
-    <td><%= link_to 'Edit', edit_company_path(company) %></td>
-    <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<% content_for :sidebar do%>
+				<h2>New Opportunities</h2>
+				<ul class="style2">
+				
+					<li class="first">
+						<h3><a href="#">Maecenas luctus lectus</a></h3>
+						<p><a href="#">Quisque dictum integer nisl risus, sagittis convallis, rutrum id, congue, and nibh.</a></p>
+					</li>
+				
+					
+				</ul>
+		<%end%>
 
-<br />
-
-<%= link_to 'New Company', new_company_path %>

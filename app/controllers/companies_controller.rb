@@ -2,7 +2,7 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
-    @companies = Company.all
+    @companies = current_user.companies
 
     respond_to do |format|
       format.html # index.html.erb
@@ -40,7 +40,11 @@ class CompaniesController < ApplicationController
   # POST /companies
   # POST /companies.json
   def create
-    @company = Company.new(params[:company])
+    #@company = Company.new(params[:company])
+    #@company.users << current_user
+    @company = current_user.companies.create(params[:company]) 
+    #current_user.companies = @company
+    
 
     respond_to do |format|
       if @company.save

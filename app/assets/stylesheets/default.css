@@ -5,8 +5,8 @@ html, body {
 body {
 	margin: 0px;
 	padding: 0px;
-	background: #22222D /*url(images/img01.png) repeat*/;
-	background-color: rgb(240, 237, 237);
+	background: rgb(194, 194, 194);
+
 	font-family: 'Open Sans', sans-serif;
 	font-size: 13px;
 	color: #545454;
@@ -115,7 +115,7 @@ hr {
 
 #logo h1
 {
-	padding: 5px 10px 0px 0px;
+	padding: 12px 10px 0px 0px;
 }
 
 #logo h1 a
@@ -191,7 +191,7 @@ hr {
 	width: 1100px;
 	padding: 50px 50px;
 	background: #F6F6F6 /*url(images/img01.png) repeat*/;
-	color: #202020;
+	color: #545454;
 }
 
 #page h2 {
@@ -315,6 +315,66 @@ ul.style2 a:hover {
 	text-decoration: underline;
 }
 
+/* Chunky List style */
+
+ul.chunky {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+ul.chunky li {
+	width:90%;
+	height:150px;
+	box-shadow: 0px 0px 15px rgb(59, 59, 65);
+	background-color:rgb(238, 238, 238);
+	background-size:16px 16px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	margin-top: 15px;
+	margin-bottom: 20px;
+	opacity:0.4;
+	filter:alpha(opacity=40); /* For IE8 and earlier */
+	}
+	ul.chunky li:hover
+	{
+	opacity:1.0;
+	filter:alpha(opacity=100); /* For IE8 and earlier */
+}
+
+ul.chunky .first {
+	padding-top: 0px;
+	border-top: none;
+}
+
+ul.chunky h2 {
+	padding: 10px 0px 0px 20px;
+}
+
+ul.chunky h3 {
+	padding: 0px 0px 10px 0px;
+}
+
+ul.chunky h3 a {
+	color: #4F4F4F;
+}
+
+ul.chunky a {
+	text-decoration: none;
+	position:relative;
+	left:460px;
+	margin-top:5px;
+
+}
+
+ul.chunky a:hover {
+}
+
+ul.chunky p {
+	padding: 10px 0px 0px 20px;
+}
+
 /* Button Style 1 */
 
 .button-style {
@@ -325,6 +385,62 @@ ul.style2 a:hover {
 	text-decoration: none;
 	text-transform: uppercase;
 	color: #FFFFFF;
+}
+
+/* Button Style 2 */
+
+.button-style2 {
+	-moz-box-shadow:inset 0px 1px 0px 0px #3b3b3d;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #3b3b3d;
+	box-shadow:inset 0px 1px 0px 0px #3b3b3d;
+	background-color:#154864;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	border:1px solid #1a1918;
+	display:inline-block;
+	color:#d1c8be;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:4px 10px;
+	text-decoration:none;
+	text-shadow:1px 1px 0px #3b3b40;
+	margin-top:40px;
+}.button-style2:hover {
+	background-color:#05557a;
+}.button-style2:active {
+	position:relative;
+	top:1px;
+}
+
+.button-style2 a {
+	text-decoration:none;
+	color:#d1c8be;
+}
+
+
+/* Table style 1 */
+
+table.style1 {
+width:90%;
+border-collapse:collapse;
+}
+
+th {
+height:relative;
+}
+
+td {
+	
+}
+
+table,th,td {
+	
+}
+
+table,th {
+	border:1px solid black;
 }
 
 

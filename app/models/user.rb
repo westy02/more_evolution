@@ -13,5 +13,6 @@ class User < ActiveRecord::Base
   has_many :microposts
   has_many :assignments
   has_many :user_types, :through => :assignments
+  has_many :companies, :through => :assignments
   
 end
