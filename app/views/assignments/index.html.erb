@@ -6,6 +6,8 @@
     <th>User type</th>
     <th>Opportunity</th>
     <th>Evolution</th>
+    <th>Company</th>
+    <th>Active_Company</th>
     <th></th>
     <th></th>
     <th></th>
@@ -17,6 +19,8 @@
     <td><%= assignment.user_type_id %></td>
     <td><%= assignment.opportunity_id %></td>
     <td><%= assignment.evolution_id %></td>
+    <td><%= assignment.company_id %></td>
+    <td><%= assignment.active_company %></td>
     <td><%= link_to 'Show', assignment %></td>
     <td><%= link_to 'Edit', edit_assignment_path(assignment) %></td>
     <td><%= link_to 'Destroy', assignment, method: :delete, data: { confirm: 'Are you sure?' } %></td>

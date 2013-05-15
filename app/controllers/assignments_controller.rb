@@ -2,7 +2,7 @@ class AssignmentsController < ApplicationController
   # GET /assignments
   # GET /assignments.json
   def index
-    @assignments = Assignment.all
+    @assignments = current_user.assignments.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -56,7 +56,7 @@ class AssignmentsController < ApplicationController
   # PUT /assignments/1
   # PUT /assignments/1.json
   def update
-    @assignment = Assignment.find(params[:id])
+    @assignment = current_user.assignments.find(params[:id])
 
     respond_to do |format|
       if @assignment.update_attributes(params[:assignment])

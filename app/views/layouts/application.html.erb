@@ -11,7 +11,7 @@
 	<div id="header">
 		<div id="logo">
 			<h1><a href="/">MORE Evolution</a></h1>
-			<p>The constant evolution of your business systems</p>
+			<p>The constant evolution of business systems</p>
 		</div>
 		<div id="menu" class="menu">
 			<ul>
@@ -20,7 +20,7 @@
 					<ul>
 						<li>
 							<span><%= link_to 'User Profile', edit_user_registration_path%>
-							<span><%= link_to 'Company Profile', companies_path, {:class => "last"} %>
+							<span><%= link_to 'Company Settings', companies_path, {:class => "last"} %>
 								</span></span>
 						</li>	
 					</ul>
@@ -36,11 +36,15 @@
 	</div>
 	<div id="subhead1"></div>
 	<div id="subhead2">
-		<div id="logo" style="padding: 5px 0px 0px 970px;"><p>By <a href="http://www.***.com">MORE Business Systems</a></p></div>
+		<div id="logo" style="padding: 5px 0px 0px 50px;">
+				<% current_user.companies.active.each do |company| %>
+			<p><strong><%=company.name%></strong> (Currently Active) </p>
+			<%end%>
+			</div>
 	</div>
 	<div id="page">
 		<div id="content">
-			
+		
 			<%= yield %>
 		</div>
 		
@@ -77,7 +81,7 @@
 		</div>
 	</div>
 	<div id="footer">
-		<p>Copyright (c) 2013 MORE_Evolution.com. All rights reserved. </p>
+		<div><p>By <a href="http://www.***.com">MORE Business Systems</a></p></div>
 	</div>
 </div>
 

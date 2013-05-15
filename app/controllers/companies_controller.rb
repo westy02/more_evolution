@@ -2,12 +2,16 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
-    @companies = current_user.companies
+    @active = current_user.companies.active
+    @not_active = current_user.companies.not_active
+    
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @companies }
     end
+    
+    
   end
 
   # GET /companies/1
@@ -43,7 +47,6 @@ class CompaniesController < ApplicationController
     #@company = Company.new(params[:company])
     #@company.users << current_user
     @company = current_user.companies.create(params[:company]) 
-    #current_user.companies = @company
     
 
     respond_to do |format|

@@ -343,6 +343,11 @@ ul.chunky li {
 	filter:alpha(opacity=100); /* For IE8 and earlier */
 }
 
+ul.chunky .active{
+	opacity:1.0;
+	filter:alpha(opacity=100); /* For IE8 and earlier */
+}
+	
 ul.chunky .first {
 	padding-top: 0px;
 	border-top: none;
@@ -363,8 +368,8 @@ ul.chunky h3 a {
 ul.chunky a {
 	text-decoration: none;
 	position:relative;
-	left:460px;
-	margin-top:5px;
+	left:15px;
+	margin-top:90px;
 
 }
 
@@ -375,6 +380,17 @@ ul.chunky p {
 	padding: 10px 0px 0px 20px;
 }
 
+ul.chunky .left {
+	width:50%;
+	height:150px;
+	float:left;
+}
+
+ul.chunky .right {
+	width:50%;
+	height:150px;
+	float:right
+}
 /* Button Style 1 */
 
 .button-style {

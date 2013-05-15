@@ -1,14 +1,37 @@
 <h2> My Companies</h2>
- <% @companies.each do |company| %>
+	
+	
+ <% @active.each do |company| %>
 <ul class="chunky">
-	<li>
-		<h2><%=company.name%></h2>
-		<p><%=company.email%></p>
-		
-		<%= link_to "Edit", edit_company_path(company), :class => "button-style2"%>
-		<%= link_to 'Delete Company', company, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button-style2" %>
+	<li class="active">
+		<div class="left">
+			<h2><%=company.name%></h2>
+			<p><%=company.email%></p>
+			<strong style="padding: 0px 0px 0px 20px; color:red;">Currently Active</strong>
+		</div>
+		<div class="right">
+			<%= link_to "Edit", edit_company_path(company), :class => "button-style2"%>
+			<%= link_to 'Delete Company', company, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button-style2" %>
+		</div>
 	</li>
 </ul>	
+<%end%>
+<% @not_active.each do |company| %>
+<ul class="chunky">
+	<li>
+		<div class="left">
+			<h2><%=company.name%></h2>
+			<p><%=company.email%></p>
+		</div>
+		<div class="right">
+			<%= link_to "Edit", edit_company_path(company), :class => "button-style2"%>
+			<%= link_to 'Delete Company', company, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button-style2" %>
+			<a class="button-style2" id="active">Activate</a>
+		</div>
+
+	</li>
+</ul>	
+
 
  <%end%>
 <a href="/companies/new" class="button-style2">New Company</a>

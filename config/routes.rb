@@ -9,10 +9,16 @@ MoreEvolution::Application.routes.draw do
   resources :microposts
   resources :evolutions
   resources :opportunities
-  resources :companies
-
-
   devise_for :users
+  resources :companies do
+    resources :users
+  end
+  resources :users do
+    resources :companies
+  end
+
+
+  
   
   
 
