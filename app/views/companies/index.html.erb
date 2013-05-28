@@ -1,7 +1,6 @@
-<h2> My Companies</h2>
-	
-	
- <% @active.each do |company| %>
+
+ <h2> Active company</h2>
+ <% @active_company.each do |company| %>
 <ul class="chunky">
 	<li class="active">
 		<div class="left">
@@ -12,13 +11,20 @@
 		<div class="right">
 			<%= link_to "Edit", edit_company_path(company), :class => "button-style2"%>
 			<%= link_to 'Delete Company', company, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button-style2" %>
+			<% company.assignments.each do |assignment| %>
+			<%= form_for assignment do |f|%>
+			Deactivate <%= f.check_box :active_company %>
+			<%= f.submit%>
+<%end%>		
+<%end%>	 
 		</div>
 	</li>
 </ul>	
 <%end%>
-<% @not_active.each do |company| %>
+<h2> My other companies</h2>
+<% @inactive_companies.each do |company| %>
 <ul class="chunky">
-	<li>
+	<li class="inactive">
 		<div class="left">
 			<h2><%=company.name%></h2>
 			<p><%=company.email%></p>
@@ -26,7 +32,14 @@
 		<div class="right">
 			<%= link_to "Edit", edit_company_path(company), :class => "button-style2"%>
 			<%= link_to 'Delete Company', company, method: :delete, data: { confirm: 'Are you sure?' }, :class => "button-style2" %>
-			<a class="button-style2" id="active">Activate</a>
+			
+			<% company.assignments.each do |assignment| %>
+			<%= form_for assignment do |f|%>
+			Activate <%= f.check_box :active_company %>
+			<%= f.submit%>
+<%end%>			 
+<%end%>
+
 		</div>
 
 	</li>

@@ -20,6 +20,16 @@
   <%= @assignment.evolution_id %>
 </p>
 
+<p>
+  <b>Company:</b>
+  <%= @assignment.company_id %>
+</p>
+
+<p>
+  <b>Active_company:</b>
+  <%= @assignment.active_company %>
+</p>
+
 
 <%= link_to 'Edit', edit_assignment_path(@assignment) %> |
 <%= link_to 'Back', assignments_path %>

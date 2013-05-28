@@ -36,11 +36,13 @@
 	</div>
 	<div id="subhead1"></div>
 	<div id="subhead2">
+		<% if user_signed_in? %>
 		<div id="logo" style="padding: 5px 0px 0px 50px;">
 				<% current_user.companies.active.each do |company| %>
 			<p><strong><%=company.name%></strong> (Currently Active) </p>
 			<%end%>
 			</div>
+		<% end %>
 	</div>
 	<div id="page">
 		<div id="content">

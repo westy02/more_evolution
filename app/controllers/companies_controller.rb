@@ -2,9 +2,8 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
-    @active = current_user.companies.active
-    @not_active = current_user.companies.not_active
-    
+    @active_company = current_user.companies.active
+    @inactive_companies = current_user.companies.inactive
 
     respond_to do |format|
       format.html # index.html.erb
@@ -45,7 +44,6 @@ class CompaniesController < ApplicationController
   # POST /companies.json
   def create
     #@company = Company.new(params[:company])
-    #@company.users << current_user
     @company = current_user.companies.create(params[:company]) 
     
 
@@ -64,14 +62,18 @@ class CompaniesController < ApplicationController
   # PUT /companies/1.json
   def update
     @company = Company.find(params[:id])
-
+    
     respond_to do |format|
       if @company.update_attributes(params[:company])
+        before_update current_user.assignments.update_all(:active_company =>'false')
         format.html { redirect_to @company, notice: 'Company was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
         format.json { render json: @company.errors, status: :unprocessable_entity }
+      end
+      if @company.update_attribute!(:active_company)
+        before_update current_user.assignments.update_all(:active_company =>'false')
       end
     end
   end

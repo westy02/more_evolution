@@ -3,6 +3,8 @@ class AssignmentsController < ApplicationController
   # GET /assignments.json
   def index
     @assignments = current_user.assignments.all
+    #@active_company = current_user.assignments.where(active_company: true)
+    #@inactive_company = current_user.assignments.where(active_company: false)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -56,8 +58,7 @@ class AssignmentsController < ApplicationController
   # PUT /assignments/1
   # PUT /assignments/1.json
   def update
-    @assignment = current_user.assignments.find(params[:id])
-
+    @assignment = Assignment.find(params[:id])
     respond_to do |format|
       if @assignment.update_attributes(params[:assignment])
         format.html { redirect_to @assignment, notice: 'Assignment was successfully updated.' }

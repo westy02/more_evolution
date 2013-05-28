@@ -11,10 +11,10 @@ MoreEvolution::Application.routes.draw do
   resources :opportunities
   devise_for :users
   resources :companies do
-    resources :users
+    resources :users, :assignments
   end
   resources :users do
-    resources :companies
+    resources :companies, :assignments
   end
 
 
