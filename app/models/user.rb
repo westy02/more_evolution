@@ -11,8 +11,8 @@ class User < ActiveRecord::Base
   #belongs_to :company
   has_many :opportunities
   has_many :microposts
-  has_many :assignments
-  has_many :user_types, :through => :assignments
+  has_many :assignments, :dependent => :destroy
+  has_many :user_types, :through => :assignments, :dependent => :destroy
   has_many :companies, :through => :assignments, :dependent => :destroy
   
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130505103440) do
+ActiveRecord::Schema.define(:version => 20130528110418) do
 
   create_table "assignments", :force => true do |t|
     t.integer  "user_id"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20130505103440) do
     t.datetime "updated_at",     :null => false
     t.integer  "company_id"
     t.boolean  "active_company"
+    t.integer  "lifecycle_id"
   end
 
   create_table "companies", :force => true do |t|
@@ -39,6 +40,14 @@ ActiveRecord::Schema.define(:version => 20130505103440) do
     t.integer  "rank"
   end
 
+  create_table "lifecycles", :force => true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "rank"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "microposts", :force => true do |t|
     t.integer  "user_id"
     t.text     "content"
@@ -51,8 +60,9 @@ ActiveRecord::Schema.define(:version => 20130505103440) do
     t.text     "suggestion"
     t.integer  "user_id"
     t.integer  "company_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.boolean  "closed",     :default => false
   end
 
   create_table "user_types", :force => true do |t|

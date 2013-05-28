@@ -2,7 +2,13 @@ class OpportunitiesController < ApplicationController
   # GET /opportunities
   # GET /opportunities.json
   def index
-    @opportunities = Opportunity.all
+    @opportunities = current_user.opportunities
+    #@user_opportunities = current_user.opportunities
+    #@company_opportunities = company.opportunities
+    #@open_user =  current_user.opportunities.open
+    #@closed_user = current_user.opportunities.closed
+    #@open_company =  company.opportunities.open
+    #@closed_company = company.opportunities.closed
 
     respond_to do |format|
       format.html # index.html.erb
@@ -40,7 +46,8 @@ class OpportunitiesController < ApplicationController
   # POST /opportunities
   # POST /opportunities.json
   def create
-    @opportunity = Opportunity.new(params[:opportunity])
+    #@opportunity = Opportunity.new(params[:opportunity])
+    @opportunity = current_user.opportunities.create(params[:opportunity])
 
     respond_to do |format|
       if @opportunity.save

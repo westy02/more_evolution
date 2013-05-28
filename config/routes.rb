@@ -1,5 +1,11 @@
 MoreEvolution::Application.routes.draw do
 
+  resources :user_types
+
+
+  resources :lifecycles
+
+
   get "pages/evolutions_home"
   get "pages/guide"
   
